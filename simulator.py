@@ -218,11 +218,8 @@ class Simulator:
                 for element in elements:
                     if element == 'condition':
                         tmp_list.append(data[element])
-                    elif element in ['temperature','pressure','humidity']:
-                        tmp_list.append(float(data[element]))
                     else:
                         tmp_list.append(float(data[element]))
-
 
                 _list.append(tmp_list)
 
