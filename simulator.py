@@ -237,9 +237,9 @@ class Simulator:
         if os.path.exists(file_path) and os.path.isfile(file_path):
             train_data = [row for row in self.csv_operator.load_csv(file_path)]
         else:
-            # the default is to retrieve 1 day ago weather data, if you want to retrieve
+            # the default is to retrieve 7 day ago weather data, if you want to retrieve
             # more, simplely add days parameter to get_weather_data() method, e.g.
-            # self.data_retriever.get_weather_data(days=7), please delete the train_data.csv
+            # self.data_retriever.get_weather_data(days=14), please delete the train_data.csv
             # for updating train_data
             train_data = self.data_retriever.get_weather_data()
             self.csv_operator.write_csv(data=train_data, name="train_data.csv", delimiter=',',
