@@ -161,7 +161,7 @@ class DataRetriever:
                 loc_data_list.append(loc_data)
         return loc_data_list
 
-    def get_weather_data(self, days=1):
+    def get_weather_data(self, days=7):
 
         location_data_list = self.get_location_data_list()
 
@@ -169,7 +169,7 @@ class DataRetriever:
         wd_list = []
         wd_keys = ['condition','temperature','pressure','humidity','time','location','lat','lng','elevation']
 
-        # get weather data X days ago from now, here default set x = 60
+        # get weather data X days ago from now, here default set x = 7
         day_peroid = [datetime.datetime.now() - datetime.timedelta(day) for day in range(1, days+1)]
 
         # retrieve weather data from api by location data
